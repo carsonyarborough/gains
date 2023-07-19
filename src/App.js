@@ -4,6 +4,7 @@ import Legs from './Pages/Legs';
 import Push from './Pages/Push';
 import Pull from './Pages/Pull';
 import Core from './Pages/Core';
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/push" element={<Push />} />
         <Route path="/pull" element={<Pull />} />
         <Route path="/core" element={<Core />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
       <div className="App">
@@ -27,7 +29,7 @@ function App() {
         <a href="/push"><button>
           Push
         </button></a>
-        <a href="/homepage"><button>
+        <a href="/home"><button>
           Home
         </button></a>
         <a href="/pull"><button>
