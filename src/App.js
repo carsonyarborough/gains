@@ -1,10 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Legs from './Pages/Legs';
-import Push from './Pages/Push';
-import Pull from './Pages/Pull';
-import Core from './Pages/Core';
-import Home from './Pages/Home';
+import Workout from './Pages/Workout';
 
 function App() {
   return (
@@ -12,30 +8,27 @@ function App() {
 
       <Routes>
         <Route path="/" />
-        <Route path="/legs" element={<Legs />} />
-        <Route path="/push" element={<Push />} />
-        <Route path="/pull" element={<Pull />} />
-        <Route path="/core" element={<Core />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/workout" element={<Workout />} />
+   
       </Routes>
     </Router>
       <div className="App">
         <p className="My-Header">
           Choose pre planned workout
         </p>
-        <a href="/legs"><button>
+        <a href="/workout"><button>
           Legs
         </button></a>
-        <a href="/push"><button>
+        <a href="/workout"><button>
           Push
         </button></a>
         <a href="/home"><button>
           Home
         </button></a>
-        <a href="/pull"><button>
+        <a href="/workout"><button>
           Pull
         </button></a>
-        <a href="/core"><button>
+        <a href="/workout"><button>
           Core
         </button></a>
       </div></>
