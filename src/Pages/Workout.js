@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
+import { selectSelectedWorkout } from '../workoutSelectors';
 
 function Workout() {
-    return <Fragment><h1> This is the Workout page</h1>
-        <h2>Back Squat</h2>
-        <h2>Romanian Deadlift</h2>
-        <h2>Lunges</h2>
-        <h2>Leg Extensions</h2>
-        <h2>Leg Curls</h2></Fragment>
+    const selectedWorkout = useSelector(selectSelectedWorkout);
+    console.log(selectedWorkout);
+    return <Fragment>
+        <h1> This is the Workout page</h1>
+        <div>{selectedWorkout?.name}</div>
+    </Fragment>
 }
-
-
 
 export default Workout;
 

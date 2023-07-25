@@ -1,10 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit"
+import { selectWorkout } from "./workoutActions";
 
-
-export const workoutReducer = createReducer([], (builder) => {
+export const workoutReducer = createReducer({ selectedWorkout: null }, (builder) => {
     builder
-        .addCase('SELECT_WORKOUT', (state, action) => {
-            console.log(state, action);
-            state.push(action.payload)
+        .addCase(selectWorkout, (state, action) => {
+            state.selectedWorkout = action.payload.selectedWorkout;
         })
 })
