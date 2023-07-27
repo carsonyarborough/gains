@@ -8,14 +8,29 @@ function Workout() {
     console.log(selectedWorkout.exercises);
 
     const exercises = selectedWorkout.exercises.map(
-        (exercise) => <li key={exercise}>{exercise}</li>
+        (exercise) => <Fragment>
+            <h3 key={exercise}>{exercise}</h3>
+            <form>
+                <div class="form-group">
+                    <label>Reps:</label>
+                    <input type="text" class="form-control"></input>
+                </div>
+                <div class="form-group">
+                    <label>Weight:</label>
+                    <input type="text" class="form-control"></input>
+                </div>
+            </form>
+
+        </Fragment>
     )
     return <Fragment>
-        <h1> This is the Workout page!!!</h1>
-        <div>{selectedWorkout.name}</div>
-        <ul>
+        <h1>This is the Workout page!!!</h1>
+        <h2>{selectedWorkout.name}</h2>
+        <div>
             {exercises}
-        </ul>
+
+        </div>
+
     </Fragment>
 }
 
