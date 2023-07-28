@@ -9,19 +9,28 @@ function Workout() {
 
     const exercises = selectedWorkout.exercises.map(
         (exercise) => <Fragment>
-            <h3 key={exercise}>{exercise}</h3>
-            <form>
-                <div class="form-group">
+            <h3 key={exercise}>{exercise} </h3>
+            <div class="input-group mb3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" type="checkbox" >
+                        <input type="checkbox" class="form-control"></input>
+                        
+                    </div>
                     <label>Reps:</label>
                     <input type="text" class="form-control"></input>
                 </div>
-                <div class="form-group">
+            </div>
+            <div class="input-group mb3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" type="checkbox" >
+                        <input type="checkbox" class="form-control"></input>
+                    </div>
                     <label>Weight:</label>
                     <input type="text" class="form-control"></input>
                 </div>
-            </form>
+            </div>
 
-        </Fragment>
+        </Fragment >
     )
     return <Fragment>
         <h1>This is the Workout page!!!</h1>
