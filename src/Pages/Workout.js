@@ -10,18 +10,18 @@ function Workout() {
     const exercises = selectedWorkout.exercises.map(
         (exercise) => <Fragment>
             <h3 key={exercise}>{exercise} </h3>
-            <div class="input-group mb3">
+            {/* <div class="input-group mb3">
                 <div class="input-group-prepend">
                
                     {/* <div class="input-group-text" type="checkbox" >
                         <input type="checkbox" class="form-control"></input>
                         
                     </div> */}
-                    <label>Reps:</label>
+                    {/* <label>Reps:</label>
                     <input type="text" class="form-control"></input>
                     <button type="button" class="btn btn-primary">save</button>
                 </div>
-            </div>
+            </div> */}
             <div class="input-group mb3">
                 <div class="input-group-prepend">
                     {/* <div class="input-group-text" type="checkbox" >
