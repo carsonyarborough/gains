@@ -1,3 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
 
 export const selectWorkout = createAction('SELECT_WORKOUT');
+
+export const addSetToExercise = createAction('ADD_SET_TO_EXERCISE');

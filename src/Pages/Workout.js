@@ -1,34 +1,42 @@
+import { current } from '@reduxjs/toolkit';
 import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSetToExercise } from '../workoutActions';
 import { selectCurrentWorkout } from '../workoutSelectors';
 
 function Workout() {
     const currentWorkout = useSelector(selectCurrentWorkout);
+    const dispatch = useDispatch();
 
-    console.log(currentWorkout);
+    function addSet(exerciseIndex) {
+        dispatch(addSetToExercise({ exerciseIndex: exerciseIndex }))
+    }
 
     const exercises = currentWorkout.exercises.map(
-        (exercise) => <Fragment>
-            <h3 key={exercise.name}>{exercise.name} </h3>
+        (exercise, exerciseIndex) => <Fragment>
+            <h3 key={exercise.name}>{exercise.name}</h3>
 
             <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="Reps">Reps:</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" placeholder="Enter Reps"></input>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="Weight">Weight:</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" placeholder="Enter Weight"></input>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-outline-danger btn-lg btn-block">Add Set</button>
+                {exercise.sets.map(function (set, setIndex) {
+                    return <Fragment>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Reps">Reps:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" placeholder="Enter Reps"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="Weight">Weight:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" placeholder="Enter Weight"></input>
+                            </div>
+                        </div>
+                    </Fragment>
+                })}
+
+                <button onClick={() => addSet(exerciseIndex)} type="button" class="btn btn-outline-danger btn-lg btn-block">Add Set</button>
 
             </form>
-
-
         </Fragment >
     )
     return <Fragment>
@@ -40,6 +48,8 @@ function Workout() {
         </div>
 
     </Fragment>
+
+
 }
 
 export default Workout;
