@@ -19,13 +19,9 @@ function Home() {
         } else if (workoutSelected === 'Pull') {
             selectedWorkoutData = pullData
         }
-        console.log(workoutSelected)
-        console.log(selectedWorkoutData)
-        dispatch(selectWorkout({ selectedWorkout: selectedWorkoutData }))
-
-
+    
+        dispatch(selectWorkout({ selectedWorkoutTemplate: selectedWorkoutData }))
         navigate("/workout");
-
     }
 
     return <Fragment>

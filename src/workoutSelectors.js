@@ -1,8 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-export const selectSelectedWorkout = createSelector(
+export const selectSelectedWorkoutTemplate = createSelector(
     state => state.workout,
-    workout => workout.selectedWorkout
+    workout => workout.selectedWorkoutTemplate
+)
+
+export const selectCurrentWorkout = createSelector(
+    state => state.workout,
+    workout => workout.currentWorkout
 )
 
 
