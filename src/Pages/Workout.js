@@ -19,7 +19,7 @@ function Workout() {
             <form class="form-horizontal">
                 {exercise.sets.map(function (set, setIndex) {
                     return <Fragment>
-                        <div class="form-group">
+                        {/* <div class="form-group">
                             <label class="control-label col-sm-2" for="Reps">Reps:</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" placeholder="Enter Reps"></input>
@@ -30,7 +30,18 @@ function Workout() {
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" placeholder="Enter Weight"></input>
                             </div>
-                        </div>
+                          
+                        </div> */}
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Reps"></input>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Weight"></input>
+                                </div>
+                            </div>
+                        </form>
                     </Fragment>
                 })}
 
