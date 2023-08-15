@@ -30,8 +30,9 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
             // accesses the exercises and index that is selected and adds empty set to exercise 
             state.currentWorkout.exercises[action.payload.exerciseIndex].sets.push({ reps: null, weight: null });
         })
-        .addCase(removeSetFromExercise, (state,action) => {
-            console.log('hello')
+        .addCase(removeSetFromExercise, (state, action) => {
+
+            state.currentWorkout.exercises[action.payload.exerciseIndex].sets.pop();
         })
 })
 

@@ -7,7 +7,7 @@ import { selectCurrentWorkout } from '../workoutSelectors';
 function Workout() {
     const currentWorkout = useSelector(selectCurrentWorkout);
     const dispatch = useDispatch();
- 
+
 
     function addSet(exerciseIndex) {
         dispatch(addSetToExercise({ exerciseIndex: exerciseIndex }))
@@ -19,30 +19,29 @@ function Workout() {
     }
     const exercises = currentWorkout.exercises.map(
         (exercise, exerciseIndex) => <Fragment>
-         
+
             <h3 key={exercise.name}>{exercise.name}</h3>
 
-          
 
-            <form className="form-horizontal">
-                {exercise.sets.map(function (set, setIndex) {
-                    return <Fragment>
 
-                        <div className="row">
-                            <div className="col">
-                                <input type="text" className="form-control" placeholder="Reps"></input>
+            <form className="form-inline">
+                <div className="container">
+                    {exercise.sets.map(function (set, setIndex) {
+                        return <div className="row">
+                            <div className="col-sm">
+                                <input type="text" className="form-control form-control-lg" placeholder="Reps"></input>
                             </div>
-                            <div className="col">
-                                <input type="text" className="form-control" placeholder="Weight"></input>
+                            <div className="col-sm">
+                                <input type="text" className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
+                            <button className="col-sm" onClick={() => removeSet(exerciseIndex)} type="button" className="btn btn-outline-dark btn">Remove Set</button>
                         </div>
+                    })}
+                </div>
 
-                    </Fragment>
-                })}
+                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-lg btn-block">Add Set</button>
 
-                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-danger btn-lg btn-block">Add Set</button>
 
-                <button onClick={() => removeSet(exerciseIndex)} type="button" className="btn btn-outline-danger btn-lg btn-block">Remove Set</button>
 
             </form>
         </Fragment >
