@@ -13,10 +13,10 @@ function Workout() {
         dispatch(addSetToExercise({ exerciseIndex: exerciseIndex }))
     }
 
-    function removeSet(exerciseIndex) {
-        console.log('hey')
-        dispatch(removeSetFromExercise({ exerciseIndex: exerciseIndex }))
+    function removeSet(exerciseIndex, setIndex) {
+        dispatch(removeSetFromExercise({ exerciseIndex: exerciseIndex, setIndex: setIndex }))
     }
+    
     const exercises = currentWorkout.exercises.map(
         (exercise, exerciseIndex) => <Fragment>
 
@@ -36,7 +36,7 @@ function Workout() {
                             <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
-                            <button className="col-sm btn btn-outline-dark btn" onClick={() => removeSet(exerciseIndex)} type="button" >Remove Set</button>
+                            <button className="col-sm btn btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)} type="button" >Remove Set</button>
                         </div>
                     })}
                 </div>

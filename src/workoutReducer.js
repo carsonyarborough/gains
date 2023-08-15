@@ -32,7 +32,7 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
         })
         .addCase(removeSetFromExercise, (state, action) => {
 
-            state.currentWorkout.exercises[action.payload.exerciseIndex].sets.pop();
+            state.currentWorkout.exercises[action.payload.exerciseIndex].sets.splice(action.payload.setIndex, 1);
         })
 })
 
