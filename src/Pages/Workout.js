@@ -1,51 +1,48 @@
 import { current } from '@reduxjs/toolkit';
 import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addSetToExercise } from '../workoutActions';
+import { addSetToExercise, removeSetFromExercise } from '../workoutActions';
 import { selectCurrentWorkout } from '../workoutSelectors';
 
 function Workout() {
     const currentWorkout = useSelector(selectCurrentWorkout);
     const dispatch = useDispatch();
+ 
 
     function addSet(exerciseIndex) {
         dispatch(addSetToExercise({ exerciseIndex: exerciseIndex }))
     }
 
+    function removeSet(exerciseIndex) {
+        console.log('hey')
+        dispatch(removeSetFromExercise({ exerciseIndex: exerciseIndex }))
+    }
     const exercises = currentWorkout.exercises.map(
         (exercise, exerciseIndex) => <Fragment>
+         
             <h3 key={exercise.name}>{exercise.name}</h3>
 
-            <form class="form-horizontal">
+          
+
+            <form className="form-horizontal">
                 {exercise.sets.map(function (set, setIndex) {
                     return <Fragment>
-                        {/* <div class="form-group">
-                            <label class="control-label col-sm-2" for="Reps">Reps:</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" placeholder="Enter Reps"></input>
+
+                        <div className="row">
+                            <div className="col">
+                                <input type="text" className="form-control" placeholder="Reps"></input>
+                            </div>
+                            <div className="col">
+                                <input type="text" className="form-control" placeholder="Weight"></input>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="Weight">Weight:</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" placeholder="Enter Weight"></input>
-                            </div>
-                          
-                        </div> */}
-                        <form>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Reps"></input>
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Weight"></input>
-                                </div>
-                            </div>
-                        </form>
+
                     </Fragment>
                 })}
 
-                <button onClick={() => addSet(exerciseIndex)} type="button" class="btn btn-outline-danger btn-lg btn-block">Add Set</button>
+                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-danger btn-lg btn-block">Add Set</button>
+
+                <button onClick={() => removeSet(exerciseIndex)} type="button" className="btn btn-outline-danger btn-lg btn-block">Remove Set</button>
 
             </form>
         </Fragment >

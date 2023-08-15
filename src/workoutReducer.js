@@ -1,6 +1,6 @@
 import { createReducer, current } from "@reduxjs/toolkit"
 import { legData } from "./Data/WorkoutData";
-import { addSetToExercise, selectWorkout } from "./workoutActions";
+import { addSetToExercise, removeSetFromExercise, selectWorkout } from "./workoutActions";
 
 export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, currentWorkout: null }, (builder) => {
     builder
@@ -30,7 +30,11 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
             // accesses the exercises and index that is selected and adds empty set to exercise 
             state.currentWorkout.exercises[action.payload.exerciseIndex].sets.push({ reps: null, weight: null });
         })
+        .addCase(removeSetFromExercise, (state,action) => {
+            console.log('hello')
+        })
 })
+
 
 // interface currentWorkout {
 //     fromTemplate: String,
