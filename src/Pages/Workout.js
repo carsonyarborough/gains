@@ -26,15 +26,17 @@ function Workout() {
 
             <form className="form-inline">
                 <div className="container">
+                    
                     {exercise.sets.map(function (set, setIndex) {
                         return <div className="row">
                             <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Reps"></input>
                             </div>
+                            
                             <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
-                            <button className="col-sm" onClick={() => removeSet(exerciseIndex)} type="button" className="btn btn-outline-dark btn">Remove Set</button>
+                            <button className="col-sm btn btn-outline-dark btn" onClick={() => removeSet(exerciseIndex)} type="button" >Remove Set</button>
                         </div>
                     })}
                 </div>

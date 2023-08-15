@@ -29,19 +29,19 @@ function Home() {
             <p className="My-Header">
                 Choose pre planned workout
             </p>
-            <button onClick={() => navigateToWorkout('Legs')}>
+            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>
-            <button onClick={() => navigateToWorkout('Push')}>
+            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Push')}>
                 Push
             </button>
-            <a href="/home"><button >
+            <a href="/home"><button class="btn-lg btn-outline-primary btn">
                 Home
             </button></a>
-            <button onClick={() => navigateToWorkout('Pull')}>
+            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Pull')}>
                 Pull
             </button>
-            <button onClick={() => navigateToWorkout('Core')}>
+            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Core')}>
                 Core
             </button>
         </div>
