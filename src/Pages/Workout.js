@@ -16,7 +16,7 @@ function Workout() {
     function removeSet(exerciseIndex, setIndex) {
         dispatch(removeSetFromExercise({ exerciseIndex: exerciseIndex, setIndex: setIndex }))
     }
-    
+
     const exercises = currentWorkout.exercises.map(
         (exercise, exerciseIndex) => <Fragment>
 
@@ -26,13 +26,13 @@ function Workout() {
 
             <form className="form-inline">
                 <div className="container">
-                    
+
                     {exercise.sets.map(function (set, setIndex) {
                         return <div className="row pb-4">
-                            <div className="col-sm ">
+                            <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Reps"></input>
                             </div>
-                            
+
                             <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
@@ -41,7 +41,7 @@ function Workout() {
                     })}
                 </div>
 
-                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-lg btn-block">Add Set</button>
+                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-block">Add Set</button>
 
 
 
@@ -49,9 +49,10 @@ function Workout() {
         </Fragment >
     )
     return <Fragment>
-        <h1>This is the Workout page!!!</h1>
-        <h2>{currentWorkout.name}</h2>
-        <div>
+     
+        <h1 className='text-center'>This is the Workout page!!!</h1>
+        <h2 className='text-center'>{currentWorkout.name}</h2>
+        <div >
             {exercises}
 
         </div>
