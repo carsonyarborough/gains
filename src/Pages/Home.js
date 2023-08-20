@@ -19,7 +19,7 @@ function Home() {
         } else if (workoutSelected === 'Pull') {
             selectedWorkoutData = pullData
         }
-    
+
         dispatch(selectWorkout({ selectedWorkoutTemplate: selectedWorkoutData }))
         navigate("/workout");
     }
@@ -29,19 +29,21 @@ function Home() {
             <p className="My-Header">
                 Choose pre planned workout
             </p>
-            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Legs')}>
+            <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>
-            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Push')}>
+            <button className="btn-lg btn-outline-dark btn mr-4 " onClick={() => navigateToWorkout('Push')}>
                 Push
             </button>
-            <a href="/home"><button class="btn-lg btn-outline-primary btn">
+
+            {/* <a href="/home"><button class="btn-lg btn-outline-primary btn mr-4">
                 Home
-            </button></a>
-            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Pull')}>
+            </button></a> */}
+
+            <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Pull')}>
                 Pull
             </button>
-            <button class="btn-lg btn-outline-dark btn" onClick={() => navigateToWorkout('Core')}>
+            <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Core')}>
                 Core
             </button>
         </div>

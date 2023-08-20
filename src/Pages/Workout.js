@@ -28,8 +28,8 @@ function Workout() {
                 <div className="container">
                     
                     {exercise.sets.map(function (set, setIndex) {
-                        return <div className="row">
-                            <div className="col-sm">
+                        return <div className="row pb-4">
+                            <div className="col-sm ">
                                 <input type="text" className="form-control form-control-lg" placeholder="Reps"></input>
                             </div>
                             
