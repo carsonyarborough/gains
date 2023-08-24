@@ -47,7 +47,7 @@ function Workout() {
     )
     return <Fragment>
 
-        <h1 className='text-center'>This is the Workout page!!!</h1>
+        <h1 className='text-center'>Log your lift!</h1>
         <h2 className='text-center font-weight-bold'>{currentWorkout.name}</h2>
 
         <div >
