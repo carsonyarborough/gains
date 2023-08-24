@@ -25,10 +25,14 @@ function Home() {
     }
 
     return <Fragment>
-        <div className='text-center bg-info'>
+        <form className='bg-info text-center'>
             <h1>
                 Choose pre planned workout
             </h1>
+            <br>
+            </br>
+            <br>
+            </br>
             <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>
@@ -46,7 +50,7 @@ function Home() {
             <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Core')}>
                 Core
             </button>
-        </div>
+        </form>
     </Fragment >;
 }
 

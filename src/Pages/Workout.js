@@ -21,9 +21,6 @@ function Workout() {
         (exercise, exerciseIndex) => <Fragment>
 
             <h3 key={exercise.name}>{exercise.name}</h3>
-
-
-
             <form className="form-inline">
                 <div className="container">
 
@@ -40,18 +37,19 @@ function Workout() {
                         </div>
                     })}
                 </div>
-
                 <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-block">Add Set</button>
-
-
-
+                <br>
+                </br>
+                <br>
+                </br>
             </form>
         </Fragment >
     )
     return <Fragment>
-     
+
         <h1 className='text-center'>This is the Workout page!!!</h1>
         <h2 className='text-center font-weight-bold'>{currentWorkout.name}</h2>
+
         <div >
             {exercises}
 
