@@ -25,10 +25,10 @@ function Home() {
     }
 
     return <Fragment>
-        <div className="App">
-            <p className="My-Header">
+        <div className='text-center bg-info'>
+            <h1>
                 Choose pre planned workout
-            </p>
+            </h1>
             <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>

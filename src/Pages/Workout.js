@@ -36,7 +36,7 @@ function Workout() {
                             <div className="col-sm">
                                 <input type="text" className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
-                            <button className="col-sm btn btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)} type="button" >Remove Set</button>
+                            <button className="col-sm btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)} type="button" >Remove Set</button>
                         </div>
                     })}
                 </div>
@@ -51,7 +51,7 @@ function Workout() {
     return <Fragment>
      
         <h1 className='text-center'>This is the Workout page!!!</h1>
-        <h2 className='text-center'>{currentWorkout.name}</h2>
+        <h2 className='text-center font-weight-bold'>{currentWorkout.name}</h2>
         <div >
             {exercises}
 
