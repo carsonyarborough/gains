@@ -25,7 +25,7 @@ function Home() {
     }
 
     return <Fragment>
-        <form className='bg-info text-center'>
+        <form className='text-center'>
             <h1>
                 Choose pre planned workout
             </h1>
