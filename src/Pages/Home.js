@@ -25,8 +25,8 @@ function Home() {
     }
 
     return <Fragment>
-        <form className='text-center'>
-            <h1>
+        <div className='text-center'>
+            <h1 className='font-weight-bold'>
                 Choose your workout
             </h1>
             <br>
@@ -50,7 +50,7 @@ function Home() {
             <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Core')}>
                 Core
             </button>
-        </form>
+        </div>
     </Fragment >;
 }
 
