@@ -25,14 +25,17 @@ function Home() {
     }
 
     return <Fragment>
-        <div className='text-center'>
+        <div className='d-flex justify-content-center bg-info'>
             <h1 className='font-weight-bold'>
                 Choose your workout
             </h1>
+            </div>
             <br>
             </br>
             <br>
             </br>
+            <div className='d-flex justify-content-around'>
+            
             <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>
