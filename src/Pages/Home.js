@@ -34,7 +34,7 @@ function Home() {
             </br>
             <br>
             </br>
-            <div className='d-flex justify-content-around'>
+            <div className='d-flex justify-content-around '>
             
             <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
                 Legs
