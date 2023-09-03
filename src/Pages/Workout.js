@@ -1,7 +1,7 @@
 import { current } from '@reduxjs/toolkit';
 import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addSetToExercise, removeSetFromExercise,saveWorkout } from '../workoutActions';
+import { addSetToExercise, removeSetFromExercise, saveWorkout } from '../workoutActions';
 import { selectCurrentWorkout } from '../workoutSelectors';
 
 function Workout() {
@@ -14,12 +14,14 @@ function Workout() {
     }
 
     function removeSet(exerciseIndex, setIndex) {
-        
+
         dispatch(removeSetFromExercise({ exerciseIndex: exerciseIndex, setIndex: setIndex }))
     }
 
-    function saveWorkout(setIndex){
-        dispatch(saveWorkout({setIndex}))
+    function saveWorkoutToStore(setIndex, exerciseIndex, newValue, setProperty) {
+        
+        dispatch(saveWorkout({ setIndex: setIndex, exerciseIndex: exerciseIndex, newValue: newValue, setProperty: setProperty}))
+
     }
 
     const exercises = currentWorkout.exercises.map(
@@ -31,14 +33,14 @@ function Workout() {
 
                     {exercise.sets.map(function (set, setIndex) {
                         return <div className="row pb-4">
-                           <div className="col-sm">
-                                <input type="text" onBlur={() => saveWorkout()} className="form-control form-control-lg" placeholder="Reps"></input>
+                            <div className="col-sm">
+                                <input type="text" onBlur={(e) => saveWorkoutToStore(setIndex, exerciseIndex, e.target.value, 'reps')} className="form-control form-control-lg" placeholder="Reps"></input>
                             </div>
 
                             <div className="col-sm">
-                                <input type="text" onBlur={() => saveWorkout()} className="form-control form-control-lg" placeholder="Weight"></input>
+                                <input type="text" onBlur={(e) => saveWorkoutToStore(setIndex, exerciseIndex, e.target.value, 'weight')} className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
-                            <button className="col-sm btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)}  type="button" >Remove Set</button>
+                            <button className="col-sm btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)} type="button" >Remove Set</button>
                         </div>
                     })}
                 </div>

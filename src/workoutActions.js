@@ -6,4 +6,4 @@ export const addSetToExercise = createAction('ADD_SET_TO_EXERCISE');
 
 export const removeSetFromExercise = createAction('REMOVE_SET_FROM_EXERCISE');
 
-export const saveWorkout = createAction ('SAVE_WORKOUT');
+export const saveWorkout = createAction('SAVE_WORKOUT');
