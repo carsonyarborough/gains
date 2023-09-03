@@ -36,10 +36,10 @@ function Home() {
             </br>
             <div className='d-flex justify-content-around '>
             
-            <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Legs')}>
+            <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Legs')}>
                 Legs
             </button>
-            <button className="btn-lg btn-outline-dark btn mr-4 " onClick={() => navigateToWorkout('Push')}>
+            <button className="btn-lg btn-outline-dark btn  " onClick={() => navigateToWorkout('Push')}>
                 Push
             </button>
 
@@ -47,7 +47,7 @@ function Home() {
                 Home
             </button></a> */}
 
-            <button className="btn-lg btn-outline-dark btn mr-4" onClick={() => navigateToWorkout('Pull')}>
+            <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Pull')}>
                 Pull
             </button>
             <button className="btn-lg btn-outline-dark btn " onClick={() => navigateToWorkout('Core')}>
