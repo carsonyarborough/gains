@@ -1,5 +1,5 @@
 import { current } from '@reduxjs/toolkit';
-import React, { Fragment } from 'react';
+import React, { Fragment} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSetToExercise, removeSetFromExercise, saveWorkout } from '../workoutActions';
 import { selectCurrentWorkout } from '../workoutSelectors';
@@ -38,7 +38,7 @@ function Workout() {
                             </div>
 
                             <div className="col-sm">
-                                <input type="text" onBlur={(e) => saveWorkoutToStore(setIndex, exerciseIndex, e.target.value, 'weight')} className="form-control form-control-lg" placeholder="Weight"></input>
+                           <input type="text" onBlur={(e) => saveWorkoutToStore(setIndex, exerciseIndex, e.target.value, 'weight')} className="form-control form-control-lg" placeholder="Weight"></input>
                             </div>
                             <button className="col-sm btn-outline-dark btn" onClick={() => removeSet(exerciseIndex, setIndex)} type="button" >Remove Set</button>
                         </div>
