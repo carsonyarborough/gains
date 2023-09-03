@@ -35,7 +35,7 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
             state.currentWorkout.exercises[action.payload.exerciseIndex].sets.splice(action.payload.setIndex, 1);
         })
         .addCase(saveWorkout, (state, action) => {
-           state.currentWorkout.exercises[action.payload.exerciseIndex].sets[action.payload.setIndex][action.payload.setProperty]='';
+            state.currentWorkout.exercises[action.payload.exerciseIndex].sets[action.payload.setIndex][action.payload.setProperty] = action.payload.newValue;
         })
 })
 
