@@ -1,6 +1,6 @@
 import { createReducer, current } from "@reduxjs/toolkit"
 import { legData } from "./Data/WorkoutData";
-import { addSetToExercise, removeSetFromExercise, selectWorkout } from "./workoutActions";
+import { addSetToExercise, removeSetFromExercise, selectWorkout, saveWorkout } from "./workoutActions";
 
 export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, currentWorkout: null }, (builder) => {
     builder
@@ -17,7 +17,7 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
                 // accesses name of workout exercise and sets it to template exercise 
                 workoutExercise.name = templateExercise;
                 // accesses sets of workout exercsie and sets it equal to an array with its first entry of two properties.
-                // two poerties being reps and weight both set to null because at the start of a workout there are no reps or weight
+                // two poperties being reps and weight both set to null because at the start of a workout there are no reps or weight
                 workoutExercise.sets = [
                     { reps: null, weight: null }
                 ];
@@ -33,6 +33,9 @@ export const workoutReducer = createReducer({ selectedWorkoutTemplate: null, cur
         .addCase(removeSetFromExercise, (state, action) => {
 
             state.currentWorkout.exercises[action.payload.exerciseIndex].sets.splice(action.payload.setIndex, 1);
+        })
+        .addCase(saveWorkout, (state, action) => {
+            state.currentWorkout.exercises[action.payload.exerciseIndex].sets.splice(action.payload);
         })
 })
 
