@@ -1,5 +1,5 @@
 import { current } from '@reduxjs/toolkit';
-import React, { Fragment} from 'react';
+import React, { Fragment, InputHTMLAttributes} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSetToExercise, removeSetFromExercise, saveWorkout } from '../workoutActions';
 import { selectCurrentWorkout } from '../workoutSelectors';
@@ -44,7 +44,7 @@ function Workout() {
                         </div>
                     })}
                 </div>
-                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-block">Add Set</button>
+                <button onClick={() => addSet(exerciseIndex)} type="button" className="btn btn-outline-primary btn-block font-weight-bold">Add Set</button>
                 <br>
                 </br>
                 <br>
